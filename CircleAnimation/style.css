@@ -2,33 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
-
-#circle-animation {
-   background-color: gray;
-   height: 500px;
-   width: 100vw;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.circle {
-    background-color: brown;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.circle-play {
-    height: 50px;
-    width: 50px;
-    background-color: #0a1827;
-    
-    
+    font-family: sans-serif;
 }
 
 
@@ -36,80 +10,44 @@
     height: 100vh;
     width: 100vw;
     background-color: gray;
-    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    
-    
-
 }
-
 
 .clock-box {
-    height: 200px;
-    width: 200px;
-    background-color: #0a182752;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(20, 20, 71);
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    border-radius: 50%;
-    border: 10px dashed rgb(172, 178, 0);
-    box-shadow: 2px 2px 10px gold;
-    z-index: 6;
-    overflow: hidden;
+    border: 5px dashed gold;
+    box-shadow: 0px 0px 15px gold;
+    inset: 20px;
     
-    
-    
-    
-
-
-
-}
-
-.clock::before {
-    position: absolute;
-    content: '';
-    background-image: conic-gradient(transparent, transparent, rgb(240, 16, 16));
-    height: 400%;
-    width: 400%;
-    animation: animate 10s linear infinite;
-}
-
-.clock::after {
-    position: absolute;
-    content: '';
-    background-image: conic-gradient(transparent, transparent, transparent, rgb(116, 155, 26));
-    height: 250px;
-    width: 2500px;
-    animation: animate 10s linear infinite;
-}
-@keyframes animate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 .top {
+  position: absolute;
+  top: 0;
+
+
+}
+
+.bottom {
     position: absolute;
-    top: 0;
+    bottom: 0;
+
 }
 
 .left {
     position: absolute;
     left: 0;
-    
-}
-
-.bottom {
-    position: absolute;
-    bottom: 0px;
 }
 
 .right {
@@ -117,76 +55,107 @@
     right: 0;
 }
 
+.top, .bottom, .left, .right {
+    font-size: 30px;
+    padding: 10px;
+    color: #fff;
+}
+
 .point {
+    position: absolute;
     height: 10px;
     width: 10px;
     background-color: gold;
     border-radius: 50%;
-    z-index: 5;
-    
 }
 
 .second {
-    height: 35%;
-    background-color: rgb(255, 255, 255);
-    animation: rotateS 60s steps(60) infinite;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: sec 60s steps(60) infinite;
 
 }
 
-@keyframes rotateS {
+@keyframes sec {
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(360deg);
     }
 }
 
-.second .minutes .hours {
-    position: absolute;
-    bottom: 50%;
+.second::after {
+    content: "";
+    height: 85px;
     width: 5px;
-    transform-origin: bottom;
-    clip-path: polygon(50% 0, 100% 5%, 100% 100%, 0 100%, 0 5%);
+    border-radius: 2px;
+    position: absolute;
+    background-color: #fd2e62;
+    box-shadow: 1px 2px 3px #00000026;
+    top: calc(50% - 10px);
+    transform: rotate(176deg);
     
+
+
 }
 
 .minutes {
-    height: 30%;
-    background-color: rgb(255, 225, 225);
-    animation: rotateM 3600s linear infinite;
-}
-
-@keyframes rotateM {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-.hours {
-    height: 25%;
-    background-color: gold;
-    animation: rotateh 43200s linear infinite;
-}
-
-@keyframes rotateh {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.top, .right, .bottom, .left {
     position: absolute;
-    font-size: 25px;
-    font-weight: 600;
-    color: goldenrod;
+    height: 100%;
+    width: 100%;
+    animation: min 3600s linear infinite; 
 }
 
+.minutes::after {
+    content: "";
+    height: 70px;
+    width: 6px;
+    border-radius: 2px;
+    position: absolute;
+    background-color: rgb(113, 155, 28);
+    top: calc(50% - 10px);
+    transform: rotate(-5deg);
+
+}
+
+@keyframes min {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    } 
+}
+
+.hours {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    animation: hour 43200s linear infinite;
+
+
+}
+
+@keyframes hour {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }  
+}
+
+.hours::after {
+    content: "";
+    height: 50px;
+    width: 7px;
+    border-radius: 2px;
+    position: absolute;
+    background-color: #fff;
+    left: calc(50% - 3px);
+    top: calc(50% - 6px);
+    transform: rotate(177deg);
+
+}
