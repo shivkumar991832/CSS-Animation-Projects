@@ -82,7 +82,7 @@ body {
 #left {
   right: 125px;
   transform: rotateY(-90deg);
-}
+} 
 
 #right {
     left: 125px;
@@ -92,8 +92,8 @@ body {
   #top{
     bottom: 125px;
     transform: rotateX(90deg);
+  
   }
-
   #bottom {
     top: 125px;
     transform: rotateX(-90deg);
