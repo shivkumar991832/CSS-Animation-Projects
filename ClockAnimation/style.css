@@ -80,7 +80,6 @@
 
 
 }
-
 .numbers:nth-child(1) {
     transform: rotate(30deg);
 }
@@ -164,7 +163,7 @@
 }
 .numbers:nth-child(12) span {
     transform: rotate(-360deg);
-}
+} 
 
 #second {
     width: 100%;
@@ -215,7 +214,7 @@
     100% {
         transform: rotate(360deg);
     }
-}   
+}    
 
 #minutes::after {
     content: "";

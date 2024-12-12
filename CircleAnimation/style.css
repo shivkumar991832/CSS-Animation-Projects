@@ -29,6 +29,7 @@
     border: 5px dashed gold;
     box-shadow: 0px 0px 15px gold;
     inset: 20px;
+    overflow: hidden;
     
 }
 
@@ -158,4 +159,12 @@
     top: calc(50% - 6px);
     transform: rotate(177deg);
 
+}
+
+.clock-box video {
+ height: 300px;
+ width: 300px;
+ border-radius: 50%;
+ object-fit: cover;
+ opacity: 5;
 }

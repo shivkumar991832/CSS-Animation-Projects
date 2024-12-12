@@ -117,21 +117,21 @@ body {
 
   }
 
-  input:focus~ .box #front {
+  input:focus ~ .box #front {
     transform: translateZ(-180px) rotateY(360deg);
   }
-  input:focus~ .box #back {
+  input:focus ~ .box #back {
     transform: translateZ(-180px) rotateY(360deg);
   }
-  input:focus~ .box #left {
+  input:focus ~ .box #left {
    right: 180px;
   }
-  input:focus~ .box #right {
+  input:focus ~ .box #right {
     left: 180px;
   }
-  input:focus~ .box #top {
+  input:focus ~ .box #top {
    bottom: 180px;
   }
-  input:focus~ .box #bottom {
+  input:focus ~ .box #bottom {
    top: 180px;
   }
