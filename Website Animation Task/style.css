@@ -34,7 +34,7 @@ body {
     
     border-radius: 7px;
     color: white;
-    background-color: #000000ef;
+    background-color: rgb(14, 14, 77);
 }
 
 .container:hover>.logo>.circle {
